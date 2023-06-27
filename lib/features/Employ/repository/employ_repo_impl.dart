@@ -26,7 +26,8 @@ class EmployeeRepoImp implements EmployeeRepo{
   }
 
   @override
-  List<Employee>? getFilteredList(double minAge, double maxAge,List<Employee> empList) {
+  List<Employee>? getFilteredList(int minAge, int maxAge,List<Employee> empList) {
+    logger.i('getFilteredList for MinAge:$minAge MaxAge:$maxAge');
      return empList.where((element) =>(element.employeeAge!>=minAge && element.employeeAge!<=maxAge)).toList();
   }
 

@@ -78,10 +78,10 @@ class _EmployeeAgeFilterState extends State<EmployeeAgeFilter> {
                           ),
                           ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.pink,
+                              backgroundColor: context.resources.color.primaryButton,
                                 ),
                               onPressed: (){
-                                widget.employeeProvider.getFilteredList(ageRange.start, ageRange.end);
+                                widget.employeeProvider.getFilteredList(ageRange.start.round(), ageRange.end.round());
                                 Navigator.pop(context);
                               },
                               child: Text('Filter Result',style: context.resources.textStyle.bodyText2,)

@@ -24,7 +24,7 @@ class EmployeeProvider extends ChangeNotifier {
         .onError((error, stackTrace) => _setEmployeeData(ApiResponse.error(error.toString())));
   }
 
-  List<Employee>? getFilteredList(double minAge ,double maxAge){
+  List<Employee>? getFilteredList(int minAge ,int maxAge){
     var newList =_employeeRepo.getFilteredList(minAge, maxAge, employeeData.data?.data??[]);
     employeeList=newList;
     notifyListeners();
